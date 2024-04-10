@@ -1,0 +1,18 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - aws:
+          accessKey: "AKIAVESXUGEBQENS2PHI"
+          description: "AWS Credentials"
+          id: "aws-credentials"
+          secretKey: "{AQYcI7ypkET74bPXd/TZPkNpMgdJ0lcwQKuTtr+c2eb7ugc4y2ldv0dXkKeUd0l2gVbig==}"
+      - basicSSHUserPrivateKey:
+          description: "KeyPair"
+          id: "sshKey"
+          privateKeySource:
+            directEntry:
+              privateKey: "{NaJOLVCzFJqr3yh1c4iV3zobXhepyLfWsAX8WiEdxc3R6DwP8G8tPkwnkT2QgV8WqTlbmps85neBQFYb6km0gsZYhymf78gLCVNUzbyMlQ==}"
+          scope: GLOBAL
+          username: "ec2-user"
+

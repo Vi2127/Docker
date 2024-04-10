@@ -1,0 +1,29 @@
+							Jenkins image to skip initial setup
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+* To skip initial configuration:
+-> Add below line in docker file.
+	[ENV JAVA_OPTS "-Djenkins.CLI.disabled=true -Djenkins.install.runSetupWizard=false ${JAVA_PROXY:-} -Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/Stockholm ${JAVA_PROXY:-}"
+] {line no: 16}
+
+
+* To create username and password (admin):
+-> init.groovy.d -> 01-admin-user
+	default: 
+		username: admin
+		password: admin123
+		[To change username and password, change value of def adminUsername = "admin" & def adminPassword = "admin123" in above mentioned file]\
+	{to place file at /var/jenkins_home- line no: 22}
+
+
+* To install plugin during initial setup:
+-> plugins_extra.txt file is required.
+	add plugin name and version in plugins_extra.txt file
+	(https://plugins.jenkins.io/)
+	{to place file at /var/jenkins_home- line no: 5 & 19}
+
+
+* To create AWS credentials or to store ssh key:
+-> jenkins-casc.yml file is required.
+	replace secret key and private key (credentials) from the file.
+	{to place file at /var/jenkins_home- line no: 25 & 28}
+
